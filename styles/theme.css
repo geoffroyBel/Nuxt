@@ -1,0 +1,17 @@
+.theme-light {
+	--primary-main-color: #d995d9;
+	--primary-light-color: #f6e5f6;
+	--primary-dark-color: #c96ac9;
+	--text-primary-color: rgb(73, 2, 101);
+	--text-secondary-color: rgb(49, 48, 48);
+	--text-muted-color: rgb(120, 116, 116);
+}
+
+.theme-dark {
+	/* --primary-main-color: #c96ac9;
+	--primary-light-color: #d995d9;
+	--primary-dark-color: #f6e5f6; */
+	--primary-main-color: black;
+	--primary-light-color: black;
+	--primary-dark-color: black;
+}

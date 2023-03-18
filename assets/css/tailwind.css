@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: content-box;
+}
+@layer components {
+	.btn {
+		@apply py-3;
+		@apply px-6;
+		@apply rounded;
+	}
+	.btn {
+		@apply py-3;
+		@apply px-6;
+		@apply rounded;
+	}
+	.menu-item::after {
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		height: 2px;
+		width: 100%;
+		transform: scaleX(0);
+		@apply bg-primary;
+		/* border-radius: theme("borderRadius.lg");
+		padding: theme("spacing.6");
+		box-shadow: theme("boxShadow.xl"); */
+	}
+	.menu-item:hover::after {
+		transition: all 1s;
+		transform: scaleX(1);
+
+		/* border-radius: theme("borderRadius.lg");
+		padding: theme("spacing.6");
+		box-shadow: theme("boxShadow.xl"); */
+	}
+}
