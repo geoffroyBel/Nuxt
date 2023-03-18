@@ -15,6 +15,8 @@
 		"nuxt": "3.0.0"
 	},
 	"dependencies": {
-		"@vueuse/nuxt": "^9.6.0"
+		"@prisma/client": "^4.11.0",
+		"@vueuse/nuxt": "^9.6.0",
+		"prisma": "^4.11.0"
 	}
 }
