@@ -2,11 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 // const prisma = new PrismaClient();
 const prisma = new PrismaClient({
-	datasources: {
-		db: {
-			url: "mysql://b8816947a9de57:2a9be7a5@us-cdbr-east-06.cleardb.net/heroku_803f032d43b2db8?reconnect=true",
-		},
-	},
+	datasources: { db: { url: process.env.DATABASE_URL } },
 });
 export default defineEventHandler(async (event) => {
 	const body = readBody(event);
