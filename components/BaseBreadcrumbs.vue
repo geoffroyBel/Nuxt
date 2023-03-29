@@ -50,7 +50,6 @@
 
 <script setup>
 const route = useRoute();
-console.log(route.path);
 const crumbs = computed(() => {
 	const pathArray = useRoute()
 		.path.split("/")

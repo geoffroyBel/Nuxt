@@ -1,13 +1,11 @@
 <template>
-	<div class="card">
-		<div class="p-4">
-			<slot name="header">
-				<h3 class="text-lg font-medium">{{ title }}</h3>
-			</slot>
-			<slot name="body">
-				<p class="mt-2 text-gray-500">{{ body }}</p>
-			</slot>
-		</div>
+	<div class="card p-10 flex flex-col">
+		<slot name="header">
+			<h3 class="text-lg font-medium">{{ title }}</h3>
+		</slot>
+		<slot name="body">
+			{{ body }}
+		</slot>
 	</div>
 </template>
 

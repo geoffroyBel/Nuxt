@@ -30,6 +30,11 @@
 			>
 			<NuxtLink
 				class="relative p-3 menu-item text-xl font-sans"
+				to="/project"
+				>Projects</NuxtLink
+			>
+			<NuxtLink
+				class="relative p-3 menu-item text-xl font-sans"
 				to="/contact"
 				>Contact</NuxtLink
 			>
@@ -37,7 +42,8 @@
 	</header>
 </template>
 <script setup>
-import { useMotion } from "@vueuse/motion";
+import { useMotion, useMotionControls } from "@vueuse/motion";
+
 const target = ref();
 
 const variants = ref({

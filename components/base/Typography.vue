@@ -39,6 +39,7 @@ export default {
 				h3: "text-sm font-medium text-primary",
 				h4: "text-lg font-semibold text-gray-500",
 				p: "text-md text-muted",
+				body: "text-xl text-muted",
 				default: "text-sm text-primary",
 			}[this.variant];
 			console.log(variantClasses);

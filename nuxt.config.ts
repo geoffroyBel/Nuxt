@@ -7,4 +7,8 @@ export default defineNuxtConfig({
 		"@vueuse/nuxt",
 		"@vueuse/motion/nuxt",
 	],
+	app: {
+		layoutTransition: { name: "layout", mode: "out-in" },
+		pageTransition: { name: "page", mode: "out-in" },
+	},
 });
