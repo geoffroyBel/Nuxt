@@ -2,7 +2,10 @@
 	<div class="theme-light flex flex-col">
 		<NavBar />
 		<section class="flex-1 text-center bg-primary-light p-20 space-y-2">
-			<h1 class="text-4xl font-mono text-gray-700 m-0 p-0">
+			<h1
+				v-motion-slide-right
+				v-motion-slide-visible-right
+				class="text-4xl font-mono text-gray-700 m-0 p-0">
 				{{ title }}
 			</h1>
 			<BaseBreadcrumbs />

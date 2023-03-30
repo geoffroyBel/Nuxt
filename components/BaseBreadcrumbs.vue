@@ -30,7 +30,7 @@
 				>
 				<BaseIcon
 					v-if="index !== crumbs.length - 1"
-					class="px-4"
+					class="px-4 rotate-90"
 					name="arrow-small"
 					size="xs" />
 				<!-- <svg

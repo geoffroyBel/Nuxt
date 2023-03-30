@@ -9,9 +9,9 @@
 				size="md"
 				name="computer" />
 			<NuxtLink
-				class="text-3xl uppercase text-primary font-bold"
+				class="text-xl uppercase text-primary font-bold"
 				to="/"
-				>Bellemare <span class="text-xl font-light">Geoffroy</span></NuxtLink
+				>Bellemare <span class="text-lg font-light">Geoffroy</span></NuxtLink
 			>
 		</div>
 
@@ -21,23 +21,23 @@
 			<NuxtLink
 				class="relative p-3 menu-item text-xl font-sans"
 				to="/"
-				>Home</NuxtLink
+				><BaseTypography variant="h4">Home</BaseTypography></NuxtLink
 			>
 			<NuxtLink
 				class="relative p-3 menu-item text-xl font-sans"
-				to="/about"
-				>About</NuxtLink
-			>
+				to="/about">
+				<BaseTypography variant="h4">About</BaseTypography>
+			</NuxtLink>
 			<NuxtLink
 				class="relative p-3 menu-item text-xl font-sans"
-				to="/project"
-				>Projects</NuxtLink
-			>
+				to="/project">
+				<BaseTypography variant="h4">Projects</BaseTypography>
+			</NuxtLink>
 			<NuxtLink
 				class="relative p-3 menu-item text-xl font-sans"
-				to="/contact"
-				>Contact</NuxtLink
-			>
+				to="/contact">
+				<BaseTypography variant="h4">Contact</BaseTypography>
+			</NuxtLink>
 		</div>
 	</header>
 </template>
