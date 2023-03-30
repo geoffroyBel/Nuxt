@@ -4,7 +4,8 @@
 	--primary-dark-color: #c96ac9;
 	--text-primary-color: rgb(73, 2, 101);
 	--text-secondary-color: rgb(49, 48, 48);
-	--text-muted-color: rgb(120, 116, 116);
+	--text-muted-color: rgba(120, 116, 116, 1);
+	--text-muted-color2: rgb(200, 197, 197);
 }
 
 .theme-dark {

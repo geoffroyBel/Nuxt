@@ -10,7 +10,7 @@ const { variant, size, uppercase } = defineProps({
 		type: String,
 		required: true,
 		validator(value) {
-			return ["info", "success", "primary"].includes(value);
+			return ["info", "success", "primary", "gray"].includes(value);
 		},
 	},
 	size: {
@@ -34,6 +34,7 @@ const classes = computed(() => {
 		info: "bg-primary text-white ",
 		success: "bg-primary",
 		primary: "bg-primary-light",
+		gray: "border border-muted text-muted",
 	}[variant];
 	const sizeClasses = { sm: "text-xs", md: "text-sm", lg: "text-base" }[size];
 	const css =

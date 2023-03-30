@@ -18,10 +18,10 @@ const props = defineProps({
 
 <style scoped>
 .card {
-	@apply bg-white rounded-lg shadow-md p-4;
+	@apply bg-white rounded-lg shadow-md p-5;
 }
 .card:hover {
-	@apply bg-primary-dark rounded-lg shadow-xl p-4;
+	@apply bg-primary-dark rounded-lg shadow-xl p-5;
 }
 
 .card-header {

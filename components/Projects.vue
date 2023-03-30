@@ -12,11 +12,12 @@
 			>My Current projects!</BaseTypography
 		> -->
 		<div class="grid md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4">
-			<div
+			<NuxtLink
 				v-for="(field, index) in data"
-				:key="data.id">
+				:key="data.id"
+				:to="field.link">
 				<BaseCard
-					class="min-h-[300px] p-5"
+					class="min-h-[300px]"
 					:title="field.title"
 					body="whatever">
 					<template v-slot:header>
@@ -28,32 +29,31 @@
 								numberToString(index + 1)
 							}}</BaseTypography>
 						</div>
-						<NuxtLink
+						<!-- <NuxtLink
 							:to="field.link"
-							target="_blank">
+							target="_blank">	</NuxtLink> -->
+						<BaseTypography
+							class="mb-5"
+							variant="h4"
+							>{{ field.title }}
 							<BaseTypography
 								class="mb-5"
-								variant="h4"
-								>{{ field.title }}
-								<BaseTypography
-									class="mb-5"
-									variant="h3">
-									link
-								</BaseTypography></BaseTypography
-							>
-						</NuxtLink>
+								variant="h3">
+								link
+							</BaseTypography></BaseTypography
+						>
 					</template>
 					<template v-slot:body>
 						<BaseTypography
-							class="bg-white mb-5 bg-transparent"
+							class="bg-white mb-5 h-[100px]"
 							variant="p"
 							>{{ field.description }}</BaseTypography
 						>
-						<BaseTypography variant="h3">{{ field.tech }}</BaseTypography>
+
 						<div class="mt-auto flex flex-wrap mb-1">
 							<BaseBadge
 								class="m-0.5"
-								variant="primary"
+								variant="gray"
 								uppercase="capitalize"
 								size="sm"
 								v-for="tech in field.frontend"
@@ -72,7 +72,7 @@
 						</div>
 					</template>
 				</BaseCard>
-			</div>
+			</NuxtLink>
 		</div>
 	</div>
 </template>
@@ -85,9 +85,17 @@ const data = [
 		title: "Coach sportif",
 		link: "hhhhhhh",
 		description:
-			'Projet "file rouge" formation AFPA. Place de marche, publier et vente de prestations sportives',
+			"Projet de formation AFPA (en cours). Place de marché. Vente de prestation sportive.",
 		frontend: ["react", "material Ui", "framer Motion", "Formik", "redux"],
-		backend: ["symfony", "api plateform", "jwt authentication", "heroku"],
+		backend: [
+			"symfony",
+			"api plateform",
+			"mercure",
+			"doctrine",
+			"mysql",
+			"jwt authentication",
+			"heroku",
+		],
 		link: "https://cryptic-badlands-94917.herokuapp.com/home",
 	},
 	{
@@ -102,8 +110,22 @@ const data = [
 			"vueuse motion",
 			"tailwind css",
 		],
-		backend: ["Nuxt", "heroku", "mysql", "heroku", "google oauth", "supabase"],
+		backend: ["Nuxt", "prisma", "mysql", "heroku", "google oauth", "supabase"],
 		link: "https://nuxt-car-trader.herokuapp.com/",
+	},
+	{
+		id: "3",
+		title: "Portfolio",
+		description: "Portfolio realiser avec Nuxt3.js et vue3.js",
+		frontend: [
+			"Nuxt3",
+			"Vue3.js",
+			"composition api",
+			"vueuse motion",
+			"tailwind css",
+		],
+		backend: ["Nuxt", "prisma", "mysql", "heroku", "google oauth", "supabase"],
+		link: "https://nuxt3-portfolio.herokuapp.com/",
 	},
 	{
 		id: "4",
@@ -114,7 +136,7 @@ const data = [
 		link: "https://afpa-html-css.herokuapp.com/sass/index.php",
 	},
 	{
-		id: "4",
+		id: "5",
 		title: "Template css",
 		description: "Visite de Kyoto",
 		frontend: ["css3", "html5"],
@@ -122,7 +144,7 @@ const data = [
 		link: "https://afpa-html-css.herokuapp.com/kyoto/index.php",
 	},
 	{
-		id: "5",
+		id: "6",
 		title: "Slideguide",
 		description: "Projet perso web1.0",
 		frontend: ["css", "javascript", "html5"],

@@ -15,7 +15,10 @@ module.exports = {
 				},
 				accent: { DEFAULT: "var(--text-primary-color)" },
 				secondary: { DEFAULT: "#bf1587" },
-				muted: { DEFAULT: "var(--text-muted-color)" },
+				muted: {
+					DEFAULT: "var(--text-muted-color)",
+					light: "var(--text-muted-color2)",
+				},
 			},
 		},
 	},
