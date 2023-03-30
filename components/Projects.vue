@@ -85,7 +85,7 @@ const data = [
 		title: "Coach sportif",
 		link: "hhhhhhh",
 		description:
-			"Projet de formation AFPA (en cours). Place de marché. Vente de prestation sportive.",
+			"Projet de formation AFPA (en construction). Place de marché. Vente de prestation sportive.",
 		frontend: ["react", "material Ui", "framer Motion", "Formik", "redux"],
 		backend: [
 			"symfony",
