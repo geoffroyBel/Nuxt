@@ -32,7 +32,7 @@
 						>
 					</template>
 					<template v-slot:body>
-						<div class="h-[150px]">
+						<div class="min-h-[150px]">
 							<BaseBadge
 								size="md"
 								class="m-1"

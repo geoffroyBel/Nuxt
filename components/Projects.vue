@@ -1,5 +1,11 @@
 <template>
 	<div class="pb-10 px-20 bg-primary-light">
+		<button
+			v-if="user"
+			class="text-primary text-base font-medium mb-2"
+			@click="navigateTo('profile/create')">
+			Ajouter un nouveau projet
+		</button>
 		<!-- <BaseTypography
 			variant="h4"
 			align="center"
@@ -161,9 +167,11 @@
 <script setup>
 import { getAllProject, getSkills } from "~~/composables/useProfile";
 const { setTitle: setBreadCrumbTitle } = useBreadCrumb();
+const user = useState("user");
 setBreadCrumbTitle("Projects en cours");
 const { data } = await getAllProject();
 const { data: skills } = await getSkills();
+
 const projects = computed(() => {
 	return data.value.reduce((a, project) => {
 		const n = { ...project };
