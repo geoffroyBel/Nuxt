@@ -1,6 +1,6 @@
 <template>
+	<!-- <NavBar /> -->
 	<div>
-		<!-- <NavBar /> -->
 		<Hero />
 		<About />
 		<Skills />

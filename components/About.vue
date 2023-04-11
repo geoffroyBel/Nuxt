@@ -1,6 +1,6 @@
 <template>
 	<div class="flex p-20">
-		<div>
+		<div class="hidden md:block">
 			<img
 				v-motion-pop
 				v-motion-pop-visible
@@ -33,7 +33,11 @@
 					:hovered="{ scale: 1.2 }"
 					:delay="200"
 					class="contained">
-					Download CV
+					<a
+						href="/img/CV.pdf"
+						download
+						>Download CV</a
+					>
 				</BaseButton>
 			</div>
 		</div>

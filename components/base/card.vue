@@ -1,5 +1,5 @@
 <template>
-	<div class="card p-10 flex flex-col">
+	<div class="card p-20 flex flex-col">
 		<slot name="header">
 			<h3 class="text-lg font-medium">{{ title }}</h3>
 		</slot>

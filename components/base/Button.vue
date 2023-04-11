@@ -1,15 +1,26 @@
 <template>
-	<button :class="classes">
+	<button
+		:type="type"
+		@click:prevent="onClick"
+		:class="classes">
 		<slot />
 	</button>
 </template>
 <script>
 export default {
 	props: {
+		type: {
+			type: String,
+			default: "button",
+		},
 		variant: {
 			type: String,
 			required: true,
 			default: "contained",
+		},
+		onClick: {
+			type: Function,
+			default: () => console.log("onclick"),
 		},
 	},
 

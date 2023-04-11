@@ -1,32 +1,32 @@
 <template>
-	<div class="flex w-full h-screen bg-primary-light">
-		<div class="flex-1 flex px-20">
-			<div class="mt-auto w-[400px] flex flex-col justify-center space-y-4">
-				<h3
-					class="block uppercase font-bold text-xl text-gray-400 leading-normal">
-					HELLO
-				</h3>
-				<h1 class="text-6xl text-gray-700 font-medium tracking-widest">
-					<span class="font-thin">I'm</span> Geoffroy Bellemare
-				</h1>
-				<h3 class="block capitalize text-xl text-gray-400 leading-loose mb-5">
-					Web Developpeur
-				</h3>
+	<div
+		class="grid gap-y-5 grid-cols-12 py-20 md:px-8 mx-auto w-full h-screen bg-primary-light">
+		<div
+			class="col flex flex-col justify-center items-center md:items-start col-span-12 md:col-span-5">
+			<h3
+				class="block uppercase font-bold text-xl text-gray-400 leading-normal">
+				HELLO
+			</h3>
+			<h1
+				class="md:text-6xl text-3xl text-gray-700 font-medium tracking-widest">
+				<span class="font-thin">I'm</span> Geoffroy Bellemare
+			</h1>
+			<h3 class="block capitalize text-xl text-gray-400 leading-loose mb-5">
+				Web Developpeur
+			</h3>
 
-				<div class="flex space-x-4 pt-5 pb-20">
-					<button class="btn bg-primary-dark text-white capitalize">
-						Hire Me
-					</button>
-					<button class="btn border border-primary-dark">PortFolio</button>
-				</div>
+			<div class="flex space-x-4 pt-5 pb-1 md:pb-20">
+				<button class="btn bg-primary-dark text-white capitalize">
+					Hire Me
+				</button>
+				<button class="btn border border-primary-dark">PortFolio</button>
 			</div>
-			<!-- -->
 		</div>
-		<div class="flex-1 flex flex-col justify-end items-center al">
+		<div class="col flex justify-center items-center col-span-12 md:col-span-7">
 			<svg
 				width="400"
 				height="450"
-				class="mb-5">
+				class="xmb-5">
 				<defs>
 					<clipPath id="svg-draw">
 						<path

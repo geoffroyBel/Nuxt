@@ -1,5 +1,5 @@
 <template>
-	<div class="p-20 bg-primary-light">
+	<div class="bg-primary-light p-10">
 		<BaseTypography
 			variant="h4"
 			align="center"
@@ -11,8 +11,10 @@
 			align="center"
 			>What can i do for you !</BaseTypography
 		>
-		<div class="grid md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4">
-			<div>
+		<div class="grid md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-3">
+			<div
+				v-for="([category, values], index) in Object.entries(skills)"
+				:key="index">
 				<BaseCard
 					title="test"
 					body="whatever">
@@ -21,79 +23,42 @@
 							<BaseIcon
 								name="skill"
 								size="sm" />
-							<BaseTypography variant="h5">01</BaseTypography>
+							<BaseTypography variant="h5">0{{ index + 1 }}</BaseTypography>
 						</div>
 						<BaseTypography
-							class="mb-5"
+							class="mb-5 uppercase"
 							variant="h4"
-							>UX/DESIGN</BaseTypography
+							>{{ category }}</BaseTypography
 						>
 					</template>
 					<template v-slot:body>
-						<BaseTypography variant="p"
-							>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit
-							possimus molestias ducimus ipsa ipsum! Cum eum ipsa itaque
-							accusantium debitis tempore ut adipisci id beatae architecto
-							nulla, dolores voluptate pariatur.</BaseTypography
-						>
-					</template>
-				</BaseCard>
-			</div>
-			<div>
-				<BaseCard
-					title="test"
-					body="whatever">
-					<template v-slot:header>
-						<div class="flex justify-between">
-							<BaseIcon
-								name="skill"
-								size="sm" />
-							<BaseTypography variant="h5">01</BaseTypography>
+						<div class="h-[150px]">
+							<BaseBadge
+								size="md"
+								class="m-1"
+								variant="gray"
+								v-for="tech in values"
+								:key="tech">
+								{{ tech }}</BaseBadge
+							>
 						</div>
-						<BaseTypography
-							class="mb-5"
-							variant="h4"
-							>UX/DESIGN</BaseTypography
-						>
-					</template>
-					<template v-slot:body>
-						<BaseTypography variant="p"
-							>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit
-							possimus molestias ducimus ipsa ipsum! Cum eum ipsa itaque
-							accusantium debitis tempore ut adipisci id beatae architecto
-							nulla, dolores voluptate pariatur.</BaseTypography
-						>
-					</template>
-				</BaseCard>
-			</div>
-			<div>
-				<BaseCard
-					title="test"
-					body="whatever">
-					<template v-slot:header>
-						<div class="flex justify-between">
-							<BaseIcon
-								name="skill"
-								size="sm" />
-							<BaseTypography variant="h5">01</BaseTypography>
-						</div>
-						<BaseTypography
-							class="mb-5"
-							variant="h4"
-							>UX/DESIGN</BaseTypography
-						>
-					</template>
-					<template v-slot:body>
-						<BaseTypography variant="p"
-							>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit
-							possimus molestias ducimus ipsa ipsum! Cum eum ipsa itaque
-							accusantium debitis tempore ut adipisci id beatae architecto
-							nulla, dolores voluptate pariatur.</BaseTypography
-						>
 					</template>
 				</BaseCard>
 			</div>
 		</div>
 	</div>
 </template>
-<script setup></script>
+<script setup>
+import { getSkills } from "~~/composables/useProfile";
+
+const { data } = await getSkills();
+const skills = computed(() => {
+	return data.value.reduce(
+		(acc, { name, category }) => {
+			acc[category.toLowerCase()].push(name);
+			return acc;
+		},
+		{ frontend: [], backend: [], design: [] }
+	);
+});
+</script>

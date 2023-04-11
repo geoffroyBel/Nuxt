@@ -5,6 +5,13 @@
 		</NuxtLayout>
 	</div>
 </template>
+<script setup>
+const nuxtApp = useNuxtApp();
+nuxtApp.hook("page:finish", () => {
+	window.scrollTo(0, 0);
+});
+await useUser();
+</script>
 <style>
 .layout-enter-active,
 .layout-leave-active {

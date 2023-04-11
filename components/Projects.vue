@@ -12,7 +12,91 @@
 			>My Current projects!</BaseTypography
 		> -->
 		<div class="grid md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4">
-			<NuxtLink
+			<BaseCard
+				class="min-h-[300px]"
+				:title="project.name"
+				body="whatever"
+				v-for="(project, index) in projects"
+				:key="index">
+				<template v-slot:header>
+					<div class="flex justify-between items-start">
+						<BaseIcon
+							name="skill"
+							size="sm" />
+						<BaseTypography
+							variant="h5"
+							class="text-3xl"
+							>{{ numberToString(index + 1) }}</BaseTypography
+						>
+					</div>
+					<!-- <NuxtLink
+							:to="field.link"
+							target="_blank">	</NuxtLink> -->
+					<div class="flex flex-col items-center space-x-2">
+						<BaseTypography
+							variant="h4"
+							class="tracking-wide"
+							>{{ project.name }}
+						</BaseTypography>
+
+						<BaseTypography
+							variant="h4"
+							class="text-sm text-muted font-thin"
+							>avancement {{ project.progress }}%
+						</BaseTypography>
+					</div>
+				</template>
+				<template v-slot:body>
+					<div class="my-3 space-y-4">
+						<p
+							class="text-muted text-center font-light"
+							variant="p">
+							{{ project.description }}
+						</p>
+
+						<div class="flex flex-wrap justify-center mb-1">
+							<BaseBadge
+								class="m-0.5"
+								variant="gray"
+								uppercase="capitalize"
+								size="sm"
+								v-for="{ name } in project.skills.frontend"
+								:key="name">
+								{{ name }}
+							</BaseBadge>
+							<BaseBadge
+								class="m-0.5"
+								variant="info"
+								uppercase="capitalize"
+								size="sm"
+								v-for="{ name } in project.skills.backend"
+								:key="name">
+								{{ name }}
+							</BaseBadge>
+						</div>
+					</div>
+
+					<div class="mt-auto flex justify-between space-x-4 items-center">
+						<div class="flex">
+							<BaseIcon name="github" />
+							<a
+								:href="project.github"
+								class="ml-1 text-base text-muted"
+								>Github</a
+							>
+						</div>
+						<div class="flex">
+							<BaseIcon name="world" />
+							<a
+								:href="project.url"
+								class="ml-1 text-base text-muted"
+								>Web</a
+							>
+						</div>
+					</div>
+				</template>
+			</BaseCard>
+			<!-- <NuxtLink
 				v-for="(field, index) in data"
 				:key="data.id"
 				:to="field.link">
@@ -29,9 +113,7 @@
 								numberToString(index + 1)
 							}}</BaseTypography>
 						</div>
-						<!-- <NuxtLink
-							:to="field.link"
-							target="_blank">	</NuxtLink> -->
+
 						<BaseTypography
 							class="mb-5"
 							variant="h4"
@@ -72,14 +154,30 @@
 						</div>
 					</template>
 				</BaseCard>
-			</NuxtLink>
+			</NuxtLink> -->
 		</div>
 	</div>
 </template>
 <script setup>
+import { getAllProject, getSkills } from "~~/composables/useProfile";
 const { setTitle: setBreadCrumbTitle } = useBreadCrumb();
 setBreadCrumbTitle("Projects en cours");
-const data = [
+const { data } = await getAllProject();
+const { data: skills } = await getSkills();
+const projects = computed(() => {
+	return data.value.reduce((a, project) => {
+		const n = { ...project };
+		n.skills = project.skills.reduce((b, { skillId }) => {
+			const skill = skills.value.find(({ id }) => id === skillId);
+			const category = skill.category.toLowerCase();
+			if (!b[category]) b[category] = [];
+			return { ...b, [category]: [...b[category], skill] };
+		}, {});
+		return [...a, n];
+	}, []);
+});
+
+const dataA = [
 	{
 		id: "1",
 		title: "Coach sportif",
