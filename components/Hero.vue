@@ -14,7 +14,8 @@
 			<h3 class="block capitalize text-xl text-gray-400 leading-loose mb-5">
 				Web Developpeur
 			</h3>
-			<h4 class="block capitalize text-vase text-gray-500 leading-loose mb-5">
+			<h4
+				class="block capitalize text-vase font-thin text-gray-500 leading-loose mb-5">
 				Portfolio réalisé avec Nuxt3.js
 			</h4>
 
