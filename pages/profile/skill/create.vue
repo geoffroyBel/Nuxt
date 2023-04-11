@@ -47,7 +47,7 @@ const state = useState("createSkill", () => ({
 	name: "",
 	category: 1,
 }));
-const options = { 1: "Frontend", 2: "Backend", 3: "UX/Design" };
+const options = { 1: "Frontend", 2: "Backend", 3: "Design" };
 const error = ref(null);
 const submit = async () => {
 	try {
