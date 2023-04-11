@@ -18,10 +18,10 @@
 				a web developer / Backend / Frontent
 			</BaseTypography>
 			<BaseTypography variant="p">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore
-				laudantium dicta aliquam eius fuga quae neque dolorum. Quod ipsam
-				quaerat, qBasedem possimus suscipit consequuntur reiciendis blanditiis
-				sunt tenetur! Maxime, labore!</BaseTypography
+				Je suis un développeur autodidacte passionné par la programmation depuis
+				plusieurs années, Actuellement en formation de développeur web&mobile,
+				je suis à la recherche d'un stage validant l'obtention de mon
+				diplôme.</BaseTypography
 			>
 
 			<div class="flex space-x-4 mt-20">
